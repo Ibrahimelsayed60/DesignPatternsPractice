@@ -2,6 +2,8 @@
 using SingletonDesignPattern.FactoryDesignPattern;
 using SingletonDesignPattern.PrototypeDesignPattern;
 using SingletonDesignPattern.StructuralPatterns.AdapterDesignPattern;
+using SingletonDesignPattern.StructuralPatterns.DecoratorDesignPattern;
+using SingletonDesignPattern.StructuralPatterns.FacadeDesignPattern;
 
 namespace SingletonDesignPattern
 {
@@ -30,8 +32,24 @@ namespace SingletonDesignPattern
             //Console.WriteLine(original.Name);
             //Console.WriteLine(copy.Name);
 
-            ICardReader reader = new NfcReaderAdapter(new NfcReader());
-            reader.ReadCard();
+            #region Adapter Design pattern
+            //ICardReader reader = new NfcReaderAdapter(new NfcReader());
+            //reader.ReadCard(); 
+            #endregion
+
+            #region Decorator Design pattern
+            //ICoffe coffee = new SimpleCoffee();
+            //Console.WriteLine($"{coffee.GetDescription()} = {coffee.GetCost()}");
+
+            //coffee = new MilkDecorator(coffee);
+
+            //coffee = new CreamDecorator(coffee); 
+            #endregion
+
+            #region Facade design pattern
+            //var player = new MoviePlayerFacade();
+            //player.PlayMovie(); 
+            #endregion
 
         }
     }
