@@ -1,4 +1,5 @@
-﻿using SingletonDesignPattern.BehavioralDesignPatterns.StrategyDesignPattern;
+﻿using SingletonDesignPattern.BehavioralDesignPatterns.ObserverDesignPattern;
+using SingletonDesignPattern.BehavioralDesignPatterns.StrategyDesignPattern;
 using SingletonDesignPattern.BuilderDesignPattern;
 using SingletonDesignPattern.FactoryDesignPattern;
 using SingletonDesignPattern.PrototypeDesignPattern;
@@ -85,11 +86,23 @@ namespace SingletonDesignPattern
             #endregion
 
             #region Strategy design pattern
-            var processor = new PaymentProcessor(new CreditCardPayment());
-            processor.ProcessPayment(100);
-            processor.SetPaymentStrategy(new PaypalPayment());
-            processor.ProcessPayment(100);
+            //var processor = new PaymentProcessor(new CreditCardPayment());
+            //processor.ProcessPayment(100);
+            //processor.SetPaymentStrategy(new PaypalPayment());
+            //processor.ProcessPayment(100);
             #endregion
+
+            #region Observer Design pattern
+
+            //var publisher = new NewsPublisher();
+            //var emailSub = new EmailSubscriber("user@gmail.com");
+            //var smsSub = new SmsSubscriber("0123456789");
+            //publisher.Attach(emailSub);
+            //publisher.Attach(smsSub);
+            //publisher.PublishNews("Breaking news: observer pattern Implemented");
+
+            #endregion
+
         }
     }
 }
