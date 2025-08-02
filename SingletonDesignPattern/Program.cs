@@ -2,8 +2,10 @@
 using SingletonDesignPattern.FactoryDesignPattern;
 using SingletonDesignPattern.PrototypeDesignPattern;
 using SingletonDesignPattern.StructuralPatterns.AdapterDesignPattern;
+using SingletonDesignPattern.StructuralPatterns.CompositeDesignPattern;
 using SingletonDesignPattern.StructuralPatterns.DecoratorDesignPattern;
 using SingletonDesignPattern.StructuralPatterns.FacadeDesignPattern;
+using File = SingletonDesignPattern.StructuralPatterns.CompositeDesignPattern.File;
 
 namespace SingletonDesignPattern
 {
@@ -50,6 +52,17 @@ namespace SingletonDesignPattern
             //var player = new MoviePlayerFacade();
             //player.PlayMovie(); 
             #endregion
+
+            var root = new Folder("Root");
+            var file1 = new File("a.txt");
+            var file2 = new File("b.txt");
+            var subFolder = new Folder("SubFolder");
+            subFolder.Add(new File("c.txt"));
+            root.Add(file1);
+            root.Add(file2);
+            root.Add(subFolder);
+            root.Display("");
+
 
         }
     }
