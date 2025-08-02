@@ -1,7 +1,9 @@
-﻿using SingletonDesignPattern.BuilderDesignPattern;
+﻿using SingletonDesignPattern.BehavioralDesignPatterns.StrategyDesignPattern;
+using SingletonDesignPattern.BuilderDesignPattern;
 using SingletonDesignPattern.FactoryDesignPattern;
 using SingletonDesignPattern.PrototypeDesignPattern;
 using SingletonDesignPattern.StructuralPatterns.AdapterDesignPattern;
+using SingletonDesignPattern.StructuralPatterns.BridgeDesignPattern;
 using SingletonDesignPattern.StructuralPatterns.CompositeDesignPattern;
 using SingletonDesignPattern.StructuralPatterns.DecoratorDesignPattern;
 using SingletonDesignPattern.StructuralPatterns.FacadeDesignPattern;
@@ -67,13 +69,27 @@ namespace SingletonDesignPattern
             #endregion
 
             #region Proxy Design pattern
-            IImage image = new ProxyImage("cat.jpg");
-            Console.WriteLine("Before displaying");
-            image.Display();
-            image.Display();
+            //IImage image = new ProxyImage("cat.jpg");
+            //Console.WriteLine("Before displaying");
+            //image.Display();
+            //image.Display();
             #endregion
 
+            #region Bridge Design pattern
 
+            //Message lightSms = new SmsMessage(new LightThemeRenderer());
+            //lightSms.show();
+            //Message darkSms = new EmailMessage(new LightThemeRenderer());
+            //darkSms.show();
+
+            #endregion
+
+            #region Strategy design pattern
+            var processor = new PaymentProcessor(new CreditCardPayment());
+            processor.ProcessPayment(100);
+            processor.SetPaymentStrategy(new PaypalPayment());
+            processor.ProcessPayment(100);
+            #endregion
         }
     }
 }
