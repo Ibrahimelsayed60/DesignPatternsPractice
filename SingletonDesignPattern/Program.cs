@@ -5,6 +5,7 @@ using SingletonDesignPattern.StructuralPatterns.AdapterDesignPattern;
 using SingletonDesignPattern.StructuralPatterns.CompositeDesignPattern;
 using SingletonDesignPattern.StructuralPatterns.DecoratorDesignPattern;
 using SingletonDesignPattern.StructuralPatterns.FacadeDesignPattern;
+using SingletonDesignPattern.StructuralPatterns.ProxyDesignPattern;
 using File = SingletonDesignPattern.StructuralPatterns.CompositeDesignPattern.File;
 
 namespace SingletonDesignPattern
@@ -53,15 +54,24 @@ namespace SingletonDesignPattern
             //player.PlayMovie(); 
             #endregion
 
-            var root = new Folder("Root");
-            var file1 = new File("a.txt");
-            var file2 = new File("b.txt");
-            var subFolder = new Folder("SubFolder");
-            subFolder.Add(new File("c.txt"));
-            root.Add(file1);
-            root.Add(file2);
-            root.Add(subFolder);
-            root.Display("");
+            #region Composite Design pattern
+            //var root = new Folder("Root");
+            //var file1 = new File("a.txt");
+            //var file2 = new File("b.txt");
+            //var subFolder = new Folder("SubFolder");
+            //subFolder.Add(new File("c.txt"));
+            //root.Add(file1);
+            //root.Add(file2);
+            //root.Add(subFolder);
+            //root.Display(""); 
+            #endregion
+
+            #region Proxy Design pattern
+            IImage image = new ProxyImage("cat.jpg");
+            Console.WriteLine("Before displaying");
+            image.Display();
+            image.Display();
+            #endregion
 
 
         }
